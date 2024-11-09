@@ -1,0 +1,9 @@
+[project]
+name = "bigswarm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "concrete-core[openai,requests]>=0.0.4",
+]
