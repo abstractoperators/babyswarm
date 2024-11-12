@@ -19,6 +19,12 @@ letta_kent = LettaAgent(
     can_speak=False,
 )
 
+letta_observer = LettaAgent(
+    starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
+    starter_human="I am communicating with many other AI agents.",
+    can_speak=False,
+)
+
 
 def big_loop():
     # read state or create it
