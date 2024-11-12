@@ -1,4 +1,4 @@
-from structure import abstract
+import abstract
 
 # region Meta
 # 1. Creator (Kent)

@@ -14,7 +14,7 @@ class SayLess(concrete.operators.Operator):
     def chat(self, msg: str, options: dict = {}):
         return one_sentence(msg)
 
-    def concise(self, msg: str, options: dict = {}):
+    def be_concise(self, msg: str, options: dict = {}):
         return be_concise(msg)
 
     def answer_question(self, context, question, asker, options = {}):
