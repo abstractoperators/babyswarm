@@ -1,14 +1,13 @@
 from typing import Any
 
 import concrete
-
 from letta import LettaAgent
 
 letta_observer = LettaAgent(
     starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
     starter_human="I am communicating with many other AI agents.",
     can_speak=False,
-    name="universe_observer"
+    name="universe_observer",
 )
 
 
@@ -33,6 +32,9 @@ class SayLess(concrete.operators.Operator):
         ]
         letta_observer.send_messages(messages)
         return res
+
+    def get_universal_context(self) -> str:
+        return letta_observer.get_incontext_memory()
 
     def chat(self, msg: str, options: dict = {}):
         return one_sentence(msg)
