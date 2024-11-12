@@ -21,7 +21,7 @@ In terms of features I'm looking to explore of techniques I'm looking to apply t
 * Co-routines/async
 
 --2:48
-3:32 pm -- 
+3:32pm -- 
 I'm getting inspired looking at [anthropic's docs on prompt engineering](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts) and the paper [Constitutional AI](https://arxiv.org/abs/2212.08073)
 
 The paper reminds me of Ken Wilber's Integral Theory, and specifically a Lemma that a principles-based existence is one of the highest operating systems possible for a person
@@ -32,3 +32,21 @@ I need to spin up a uv environment and repo,
 can I get an event loop up and running?
 <eng/>
 --3:40pm
+
+7:55pm --
+I went deep into looking at research papers.
+
+I realize personally I'd like to be more attune to what's happening in the scientific community
+This, in fact, is the only source of edge in our company
+
+We as an engineering organization need to be at the forefront of applying communicated advancements in our chosen area of expertise
+
+For this project, I listed out some techniques I'm interested to apply
+I think instead I am changing my orientation to specifically apply the "canon" papers of multi-agent architectures
+
+At the same time, I want a best in class implementation of a single agent architecture
+
+The project overall now should be scientifically grounded
+
+I can take an "inductive" approach. Start from a baseline, baby implementation of agent-agent interaction, and scale it up the ladder of abstraction
+--7:58pm

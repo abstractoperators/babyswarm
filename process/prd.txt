@@ -1,28 +1,79 @@
-big swarm demo
-
-## User Story
-Kent shows the live building and the results of a multi-agent orchestration to the awe of an audience of AI practictioners
+# big swarm demo
 
 ## Features
-* Many AI Agents
-  - Hardcoded
-    ¬ ABOP Simulacra
-  - Dynamically-generated
-* Specialized Knowledge Workers
-  - Editable Memory
-* Constitution Abiding
-* Abstract Navigation
-  - Systematic Scenario Attack
-    ¬ Research
-    ¬ Discource Graphs
-  - Human-in-the-Loop
 
-## Requirements
-* Create standardized coding environment
-* `AutoOperator`
-  - Combines prompt engineer with dynamic operator instantiation
-    ¬ look at parallel between pydantic normal and dynamic instantiation
-* RAG > GraphRAG > Discourse Graphs
-  - Denormalized data embeddings
-* Constitution
-  - Principled, Just, Fair
+Cycles + Workflows
+* Protocols
+
+Static + Dynamic Memories
+* Shared memory access
+* Cached and external memory
+
+Role-based Agents
+* Personality
+* Radical candor
+
+Tool-Use
+
+## Limitations
+* no (robust) RAG
+* not performant
+
+## Agents
+
+### Meta
+1. Creator (Kent)
+2. Builder (Michael)
+3. Product (Takeshi)
+4. Design (Andy)
+
+### Humanities
+1. Art Historian (Giorgio Vasari)
+2. Philosophy (Kant)
+3. Philosophy 2 (Nietzsche)
+4. Psychology (Jung)
+5. Psychology 2 (Bloom)
+6. Sociology (Ken Wilber)
+
+### Sciences
+1. Computer Scientist (Donald Knuth)
+2. Riddle Solve (Marilyn vos Savant)
+3. Physicist (Feynman)
+4. Math (Hilbert)
+5. Biology (Darwin/Dawkins)
+
+
+## Protocols
+Big Loop
+* Brainstorm idea
+* Breakdown tasks
+* Execute
+
+Small Loop
+* Reason
+* Speak
+* Act
+
+Workflows
+1. Identify lead
+2. Decompose task
+  - individuals splits into exec + dev
+3. execute
+
+
+## Selected References
+
+Generative Agents: Interactive Simulacra of Human Behavior
+https://arxiv.org/abs/2304.03442
+
+ReSpAct: Harmonizing Reasoning, Speaking, and Acting Towards Building Large Language Model-Based Conversational AI Agents
+https://arxiv.org/abs/2411.00927
+
+MemGPT: Towards LLMs as Operating Systems
+https://arxiv.org/abs/2310.08560
+
+AI prompt engineering: a deep dive
+https://www.youtube.com/watch?v=T9aRN5JkmL8
+
+Concrete
+https://github.com/abstractoperators/concrete
