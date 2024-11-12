@@ -1,7 +1,6 @@
 import json
 
 universe_path = "./state/universe-state.json"
-universe_state = {}
 
 
 
@@ -12,7 +11,7 @@ def fetch_universe():
 
 def save_universe(state):
     with open(universe_path, 'w') as f:
-        json.dump(f, indent=4, sort_keys=True)
+        json.dump(state, f, indent=4, sort_keys=True)
 
 
 s = fetch_universe()

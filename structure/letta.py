@@ -5,6 +5,17 @@ import requests
 from jinja2 import Template
 
 
+def render_incontext_memory(memory: dict[dict, str]) -> str:
+    """
+    Renders the in-context memory of the agent.
+    """
+
+    prompt_template = memory.get('prompt_template')
+    memory_blocks = memory
+
+    return Template(prompt_template).render(memory_blocks)
+
+
 class LettaAgent:
     def __init__(
         self,
@@ -140,7 +151,7 @@ class LettaAgent:
 
         url = f"http://localhost:8283/v1/agents/{self.agent_id}/memory/"
         response = requests.get(url)
-        return response.json()
+        return render_incontext_memory(response.json())
 
     def update_incontext_memory(self, new_memory: dict[dict, str]) -> None:
         """
@@ -180,13 +191,3 @@ class LettaAgent:
 
     #     return [i['text'] for i in response]
 
-
-def render_incontext_memory(memory: dict[dict, str]) -> str:
-    """
-    Renders the in-context memory of the agent.
-    """
-
-    prompt_template = memory.get('prompt_template')
-    memory_blocks = memory
-
-    return Template(prompt_template).render(memory_blocks)
