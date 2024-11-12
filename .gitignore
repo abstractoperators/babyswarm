@@ -129,6 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+!.venv/lib/python3.12/site-packages/concrete
 
 # Spyder project settings
 .spyderproject

@@ -2,12 +2,13 @@ from typing import Any
 
 import concrete
 
-from .letta import LettaAgent
+from letta import LettaAgent
 
 letta_observer = LettaAgent(
     starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
     starter_human="I am communicating with many other AI agents.",
     can_speak=False,
+    name="universe_observer"
 )
 
 
@@ -20,6 +21,18 @@ def be_concise(msg: str) -> str:
 
 
 class SayLess(concrete.operators.Operator):
+
+    def _qna(self, *args, **kwargs):
+        res = super()._qna(*args, **kwargs)
+        messages = [
+            {
+                'role': 'user',
+                'text': f'{self.__class__.__name__} said: {res}',
+                'name': self.__class__.__name__,
+            },
+        ]
+        letta_observer.send_messages(messages)
+        return res
 
     def chat(self, msg: str, options: dict = {}):
         return one_sentence(msg)
@@ -42,41 +55,6 @@ Their question is
 Answer their question to the best of your ability or say "I don't know" if you don't know.
 """
         )
-
-    def maybe_ask_question(self, context, options={}):
-        return be_concise(
-            f"""
-Consider the following context
-                          
-# Context
-{context}
-
-Do you want to ask a question?
-"""
-        )
-
-    def _qna(self, *args, **kwargs):
-        res = super()._qna(*args, **kwargs)
-        messages = [
-            {
-                'role': 'user',
-                'text': f'{self.__class__.__name__} said: {res}',
-                'name': self.__class__.__name__,
-            },
-        ]
-        letta_observer.send_messages(messages)
-
-
-class Evaluator(SayLess):
-    instructions = "You evaluate natural language, only respond with 'yes' or 'no'"
-
-    def evaluate(self, question, options={}):
-        return f"""
-# Question
-{question}
-
-Respond with yes or no
-"""
 
 
 class PromptEngineer(SayLess, concrete.operators.PromptEngineer):

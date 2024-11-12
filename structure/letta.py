@@ -11,26 +11,26 @@ class LettaAgent:
         starter_persona: str = "",
         starter_human: str = "",
         can_speak: bool = False,
-        name: str = str(uuid4()),
+        name: str | None = None,
     ):
         self.can_speak = can_speak
 
-        self.name = name
+        self.name = name if name is not None else "noname"
         self.persona = (
             starter_persona
             or "The following is a blank state starter persona. I need to expand this to develop my own personality."
         )
         self.human = starter_human or "I know nothing about the human."
-        self.agent_id = self.create_letta_agent(starter_persona=starter_persona, starter_human=starter_human, name=name)
+        self.agent_id = self.create_letta_agent()
 
-    def create_letta_agent(self, starter_persona: str, starter_human: str, name: str) -> str:
+    def create_letta_agent(self) -> str:
         """
         Creates a Letta Agent.
         Returns the agent id.
         """
         payload = {
             'description': "A chatbot that can help with general questions.",
-            'name': name,
+            'name': self.name + str(uuid4())[:7],
             "llm_config": {
                 'model': 'gpt-4o-mini',
                 'model_endpoint_type': 'openai',
@@ -94,7 +94,7 @@ class LettaAgent:
             "No response": Indicates that the agent can speak, but didn't
             "Response": Indicates that the agent can speak and did
         """
-
+        print(messages)
         payload = {
             'messages': messages,
         }
