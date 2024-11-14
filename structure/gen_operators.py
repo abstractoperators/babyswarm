@@ -1,5 +1,5 @@
 import concrete
-from structure import abstract
+import abstract
 
 agent_spawner = abstract.PromptEngineer()
 
@@ -18,7 +18,7 @@ agent_seeds = [
 ]
 
 if __name__ == '__main__':
-    resp = agent_spawner.concise(
+    resp = agent_spawner.be_concise(
         """
 Generate a prompt for an AI agent to include in a multi-agent orchestration demo
 

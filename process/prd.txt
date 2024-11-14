@@ -1,9 +1,6 @@
-# big swarm demo
+# medium swarm demo
 
 ## Features
-
-Cycles + Workflows
-* Protocols
 
 Memories
 * Shared memory access
@@ -12,10 +9,6 @@ Memories
 Role-based Agents
 
 Tool-Use
-
-## Limitations
-* no (robust) RAG
-* not performant
 
 ## Protocol
 1. Assemble diverse groups
@@ -60,9 +53,6 @@ Continuously evaluate goodness and coherency of the idea
 
 Generative Agents: Interactive Simulacra of Human Behavior
 https://arxiv.org/abs/2304.03442
-
-ReSpAct: Harmonizing Reasoning, Speaking, and Acting Towards Building Large Language Model-Based Conversational AI Agents
-https://arxiv.org/abs/2411.00927
 
 MemGPT: Towards LLMs as Operating Systems
 https://arxiv.org/abs/2310.08560

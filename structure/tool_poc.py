@@ -9,14 +9,14 @@ class ProjectExecutionTool(metaclass=tools.MetaTool):
         """
         Abandon the project because it's infeasible or unlikely to be profitable.
         """
-        return True
+        return
 
     @staticmethod
     def continue_project() -> True:
         """
         Continue working on the project.
         """
-        return True
+        return
 
 kent = operators.Kent(
     tools=[ProjectExecutionTool],
@@ -24,6 +24,7 @@ kent = operators.Kent(
 )
 print(
     kent.be_concise(
+        # "This project sucks, let's quit"
         "Do not abandon the project, continue"
     )
 )

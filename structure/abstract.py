@@ -7,9 +7,8 @@ letta_observer = LettaAgent(
     starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
     starter_human="I am communicating with many other AI agents.",
     can_speak=False,
-    name="universe_observer",
+    name="universe_watcher"
 )
-
 
 def one_sentence(msg: str) -> str:
     return f"{msg} \nGive a short reply of max one sentence."

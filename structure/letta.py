@@ -105,7 +105,6 @@ class LettaAgent:
             "No response": Indicates that the agent can speak, but didn't
             "Response": Indicates that the agent can speak and did
         """
-        print(messages)
         payload = {
             'messages': messages,
         }
@@ -113,7 +112,6 @@ class LettaAgent:
         url = f"http://localhost:8283/v1/agents/{self.agent_id}/messages/"
 
         response = requests.post(url, json=payload).json()
-
         if not self.can_speak:
             return None
 
