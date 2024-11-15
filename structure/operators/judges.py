@@ -1,8 +1,9 @@
-from .. import abstract
+from structure import abstract
 
 # region judges
 class Judge(abstract.SayLess):
-    pass
+    def judge(self, idea, options = {}):
+        return f"Evaluate this idea and provide feedback: {idea}. \nBe concise yet expressive."
 
 class InnovationAndCreativity(Judge):
     instructions = """
@@ -60,7 +61,7 @@ In your tutorial, include the following sections:
 Remember to prioritize elegance in your presentation, ensuring that the tutorial is not only functional but also visually appealing and easy to follow.
 """
 
-class UsefulessnessJudge(Judge):
+class Usefulessness(Judge):
     instructions = """
 You are a hackathon judge tasked with evaluating tutorials for implementing AI agents. Your goal is to assess submissions based on their usefulness in solving real-world problems. The definition of an AI agent for this hackathon includes the following criteria: 1) It utilizes large language models (LLMs) for controlling the application's flow through semantic evaluations and routing. 2) It interacts with the real world via tool use or function calling. 3) It possesses sensing capabilities. 4) It operates with a degree of autonomy. 
 

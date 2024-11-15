@@ -102,14 +102,14 @@ wheels = [
 [[package]]
 name = "concrete-core"
 version = "0.0.7"
-source = { registry = "https://test.pypi.org/simple/" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
     { name = "python-dotenv" },
 ]
-sdist = { url = "https://test-files.pythonhosted.org/packages/84/25/97fda30956b9f9e7713ac1cb623856b728fc54bc9c1e26c49c039c207d9b/concrete_core-0.0.7.tar.gz", hash = "sha256:5a8f2b0cf4cd18460ad0883e48098f3b5a3d497c596fe9edc1f7fbaf27fb33ba", size = 30834 }
+sdist = { url = "https://files.pythonhosted.org/packages/d9/30/087953b6e06fc0d32a7af55e82f880acd7319e3b1bf5b5d7320e6b8799b6/concrete_core-0.0.7.tar.gz", hash = "sha256:b0bd462f510a150aabfafd0fb3e329cd21352358f379752a49a29cf17c6f9931", size = 30828 }
 wheels = [
-    { url = "https://test-files.pythonhosted.org/packages/e8/5f/90e7e794b856d22695a90b76065ae23157dd01a3abfe5358a275be7affc6/concrete_core-0.0.7-py3-none-any.whl", hash = "sha256:1edcb2fcf31293fc99ade178eee452de92a5556d6cf912a2aab51869692af483", size = 38740 },
+    { url = "https://files.pythonhosted.org/packages/a1/5d/254a56f3af796a2ed9f5916bb142eebacb01bdc00c0eb65206d1859dc746/concrete_core-0.0.7-py3-none-any.whl", hash = "sha256:92b95e0aa18aa050ab7db8b54c0266751bc7108f0c834f0d079d757ae68ad092", size = 38732 },
 ]
 
 [package.optional-dependencies]
