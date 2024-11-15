@@ -1,9 +1,11 @@
 import json
 from uuid import uuid4
 
+import concrete
 import requests
 from jinja2 import Template
 
+from structure.abstract import SayLess
 
 def render_incontext_memory(memory: dict[dict, str]) -> str:
     """
@@ -189,3 +191,29 @@ class LettaAgent:
 
     #     return [i['text'] for i in response]
 
+# region Letta Integration
+letta_observer = LettaAgent(
+    starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
+    starter_human="I am communicating with many other AI agents.",
+    can_speak=False,
+    name="universe_watcher"
+)
+
+def _qna(self, *args, **kwargs):
+    res = concrete.operators.Operator._qna(self, *args, **kwargs)
+    messages = [
+        {
+            'role': 'user',
+            'text': f'{self.__class__.__name__} said: {res}',
+            'name': self.__class__.__name__,
+        },
+    ]
+    letta_observer.send_messages(messages)
+    return res
+
+def get_universal_context(self) -> str:
+    return letta_observer.get_incontext_memory()
+
+SayLess._qna = _qna
+SayLess.get_universal_context = get_universal_context
+# endregion

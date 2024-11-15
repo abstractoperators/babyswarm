@@ -1,14 +1,6 @@
 from typing import Any
 
 import concrete
-from letta import LettaAgent
-
-letta_observer = LettaAgent(
-    starter_persona="I am a notetaker for messages. My job is to keep track of the different ideas. ",
-    starter_human="I am communicating with many other AI agents.",
-    can_speak=False,
-    name="universe_watcher"
-)
 
 def one_sentence(msg: str) -> str:
     return f"{msg} \nGive a short reply of max one sentence."
@@ -19,22 +11,6 @@ def be_concise(msg: str) -> str:
 
 
 class SayLess(concrete.operators.Operator):
-
-    def _qna(self, *args, **kwargs):
-        res = super()._qna(*args, **kwargs)
-        messages = [
-            {
-                'role': 'user',
-                'text': f'{self.__class__.__name__} said: {res}',
-                'name': self.__class__.__name__,
-            },
-        ]
-        letta_observer.send_messages(messages)
-        return res
-
-    def get_universal_context(self) -> str:
-        return letta_observer.get_incontext_memory()
-
     def chat(self, msg: str, options: dict = {}):
         return one_sentence(msg)
 
@@ -68,5 +44,18 @@ The personality and inspiration for this ai agent is
 You are a great {role} on par with {model}
 
 Your job will be to provide meaningful and creative input on projects drawing upon the works and ideas of {model}
+"""
+        )
+
+    def make_hackathon_judge(self, objective, criterion, options={}):
+        return be_concise(
+            f"""
+Generate a prompt for an AI agent to include in a multi-agent orchestration demo
+
+You are a hackathon judge with the following objective:
+{objective}
+
+You are specifically judging for
+{criterion}
 """
         )
